@@ -7,5 +7,6 @@ def count_inversions(arr):
 
     return count
 
+# Example usage:
 arr = [3, 1, 2]
 print(f"Number of inversions: {count_inversions(arr)}")
