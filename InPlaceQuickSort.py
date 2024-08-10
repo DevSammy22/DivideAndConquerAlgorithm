@@ -1,7 +1,7 @@
 def partition(arr, low, high):
-    # Pivot (Choosing the last element as the pivot)
+    # Choosing the last or rightmost element as the pivot
     pivot = arr[high]
-    # Pointer for the smaller element
+    # Index of smaller element or Pointer for the smaller element
     i = low - 1
     for j in range(low, high):
         # If current element is smaller than or equal to pivot
@@ -16,7 +16,7 @@ def partition(arr, low, high):
 
 def quick_sort(arr, low, high):
     if low < high:
-        # Finding the partitioning index
+        # Finding the partitioning index or Choose the rightmost element as the pivot
         pivot_index = partition(arr, low, high)
 
         # Recursively sort the elements before and after partition
