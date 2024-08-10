@@ -18,19 +18,18 @@ def quick_sort(arr, low, high):
     if len(arr) <= 1:
         return arr
 
-    # Finding the partitioning index or Choose the rightmost element as the pivot
-    pivot_index = partition(arr, low, high)
-
     if low < high:
+        # Finding the partitioning index or Choose the rightmost element as the pivot
+        pivot_index = partition(arr, low, high)
         # Recursively sort the elements before partition
-        return (arr, low, pivot_index - 1)
-    else:
+        quick_sort(arr, low, pivot_index - 1)
         # Recursively sort the elements after partition
-        return quick_sort(arr, pivot_index + 1, high)
+        quick_sort(arr, pivot_index + 1, high)
 
+    return arr
 
 # Example usage:
 arr = [10, 7, 8, 9, 1, 5]
 n = len(arr)
-quick_sort(arr, 0, n - 1)
-print("Sorted array:", arr)
+sorted_array = quick_sort(arr, 0, n - 1)
+print("Sorted array:", sorted_array)
