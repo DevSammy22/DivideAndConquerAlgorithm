@@ -2,17 +2,17 @@ def partition(arr, low, high):
     # Choosing the last or rightmost element as the pivot
     pivot = arr[high]
     # Index of smaller element or Pointer for the smaller element
-    i = low - 1
+    i = low
     for j in range(low, high):
         # If current element is smaller than or equal to pivot
         if arr[j] <= pivot:
-            i += 1
             # Swap arr[i] and arr[j]
             arr[i], arr[j] = arr[j], arr[i]
+            i += 1
     # Swap the pivot element with the element at i+1 position
-    arr[i+1], arr[high] = arr[high], arr[i+1]
+    arr[i], arr[high] = arr[high], arr[i]
 
-    return i+1
+    return i
 
 def quick_sort(arr, low, high):
     if low < high:
